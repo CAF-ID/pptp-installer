@@ -130,9 +130,8 @@ while true; do
 		echo -e "${GREEN}[ ${RED}Complete Configure PPTPD Server${NC} ${GREEN}]${NC}"
 		echo -e "clear\nalias cafvpn=\"/etc/run.sh\"\nneofetch" | tee ~/.bashrc >/dev/null 
 		echo -e "[ ${GREENISH}Berhasil Menambahkan Command 'cafvpn' untuk Control PPTP ${NC} ]"
-		cp "$this_file" "$destination_path"
+		cp "$this_file" "$destination_path" >/dev/null
 		chmod +x "$destination_path"
-		rm -rf "${this_file}"
 		echo "${IP_VPN}" | tee /etc/ipvpn >/dev/null
 		chmod +x /etc/ipvpn
 		remaining_time=15
