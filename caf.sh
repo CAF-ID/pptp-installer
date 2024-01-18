@@ -54,6 +54,8 @@ while true; do
 	  break
 	  ;;
       1)
+      	echo "Enable iPv4 Forwarder"
+	sed -i "s/^#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/" /etc/sysctl.conf
         echo "Setting Up PPTPD"
         # Cek repo dulu rek
         if grep -Fxq "deb http://kartolo.sby.datautama.net.id/debian/ buster main contrib non-free" /etc/apt/sources.list; then
